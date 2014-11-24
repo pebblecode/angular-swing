@@ -3690,6 +3690,7 @@ Card = function (stack, targetElement) {
         lastTranslate = {x: 0, y: 0},
         throwOutDistance,
         onSpringUpdate,
+        mc,
         throwWhere;
 
     throwOutDistance = config.throwOutDistance(config.minThrowOutDistance, config.maxThrowOutDistance);
