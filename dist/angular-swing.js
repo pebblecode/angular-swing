@@ -3690,6 +3690,7 @@ Card = function (stack, targetElement) {
         lastTranslate = {x: 0, y: 0},
         throwOutDistance,
         onSpringUpdate,
+        mc,
         throwWhere;
 
     throwOutDistance = config.throwOutDistance(config.minThrowOutDistance, config.maxThrowOutDistance);
@@ -4097,7 +4098,7 @@ angular
                 // @see https://docs.angularjs.org/api/ng/service/$compile#comprehensive-directive-api
                 angular.forEach(events, function (eventName) {
                     card.on(eventName, function (eventObject) {
-                        scope['swingOn' + eventName.charAt(0).toUpperCase() + eventName.slice(1)]({eventName: eventName, eventObject: eventObject});
+                        scope['swingOn' + eventName.charAt(0).toUpperCase() + eventName.slice(1)]({eventName: eventName, eventObject: eventObject, card: card});
                     });
                 });
             }
